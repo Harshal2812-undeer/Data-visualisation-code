@@ -1,0 +1,232 @@
+import pandas as pd
+
+
+
+# Load the dataset (replace 'dataset.csv' with your actual dataset file path)
+
+df = pd.read_csv('/content/Crop_recommendation.csv')
+
+
+
+# Display the first few rows of the dataset
+
+print(df.head())
+
+
+
+# Check the column names and data types
+
+print(df.info())
+
+
+
+# Get summary statistics of numerical columns
+
+print(df.describe())
+
+
+
+
+
+
+
+
+
+#data visualization
+
+
+
+import matplotlib.pyplot as plt
+
+import seaborn as sns
+
+
+
+# Example: Scatter plot of N vs. P colored by label
+
+plt.figure(figsize=(10, 6))
+
+sns.scatterplot(x='N', y='P', hue='label', data=df)
+
+plt.title('Scatter Plot of N vs. P')
+
+plt.xlabel('Nitrogen (N)')
+
+plt.ylabel('Phosphorus (P)')
+
+plt.show()
+
+
+
+# Example: Distribution of temperature by label
+
+plt.figure(figsize=(10, 6))
+
+sns.histplot(data=df, x='temperature', hue='label', kde=True)
+
+plt.title('Distribution of Temperature by Label')
+
+plt.xlabel('Temperature')
+
+plt.show()
+
+
+
+
+
+#visualization
+
+
+
+
+
+import matplotlib.pyplot as plt
+
+import seaborn as sns
+
+import pandas as pd
+
+
+
+# Example dataset (replace with your dataset)
+
+data = {
+
+    'N': [10, 20, 30, 40, 50],
+
+    'P': [15, 25, 35, 45, 55],
+
+    'label': ['A', 'B', 'A', 'B', 'A']
+
+}
+
+
+
+df = pd.DataFrame(data)
+
+
+
+# Scatter plot of N vs. P colored by label
+
+plt.figure(figsize=(8, 6))
+
+sns.scatterplot(x='N', y='P', hue='label', data=df, palette='Set1')
+
+plt.title('Scatter Plot of N vs. P')
+
+plt.xlabel('Nitrogen (N)')
+
+plt.ylabel('Phosphorus (P)')
+
+plt.show()
+
+
+
+
+
+
+
+#visualization
+
+
+
+# Example dataset (replace with your dataset)
+
+data = {
+
+    'Crop': ['Wheat', 'Rice', 'Maize', 'Barley'],
+
+    'Yield': [4500, 3800, 5000, 4200]
+
+}
+
+
+
+df = pd.DataFrame(data)
+
+
+
+# Bar chart of crop yields
+
+plt.figure(figsize=(8, 6))
+
+sns.barplot(x='Crop', y='Yield', data=df, palette='viridis')
+
+plt.title('Crop Yields')
+
+plt.xlabel('Crop')
+
+plt.ylabel('Yield (kg/ha)')
+
+plt.xticks(rotation=45)
+
+plt.show()
+
+
+
+
+
+
+
+# Example dataset (replace with your dataset)
+
+import numpy as np
+
+np.random.seed(0)
+
+data = np.random.normal(loc=0, scale=1, size=1000)
+
+
+
+# Histogram of a random variable
+
+plt.figure(figsize=(8, 6))
+
+sns.histplot(data, kde=True, color='skyblue')
+
+plt.title('Histogram of Random Variable')
+
+plt.xlabel('Value')
+
+plt.ylabel('Frequency')
+
+plt.show()
+
+
+
+
+
+
+
+# Example dataset (replace with your dataset)
+
+data = {
+
+    'Crop': ['Wheat', 'Rice', 'Maize', 'Barley'],
+
+    'Yield': [4500, 3800, 5000, 4200],
+
+    'Region': ['North', 'South', 'North', 'South']
+
+}
+
+
+
+df = pd.DataFrame(data)
+
+
+
+# Box plot of crop yields by region
+
+plt.figure(figsize=(8, 6))
+
+sns.boxplot(x='Crop', y='Yield', hue='Region', data=df, palette='Set2')
+
+plt.title('Crop Yields by Region')
+
+plt.xlabel('Crop')
+
+plt.ylabel('Yield (kg/ha)')
+
+plt.show()
+
